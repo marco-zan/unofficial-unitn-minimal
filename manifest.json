@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Unofficial Unitn Minimal",
+    "version": "0.1",
+    "description": "Removes unnecessary unitn moodle gui elements. Not associated with unitn",
+    "content_scripts": [
+      {
+        "matches": ["https://didatticaonline.unitn.it/dol/mod/daddyvideo/view.php*"],
+        "js": ["js/video_cleaner.js"]
+      },
+      {
+        "matches": ["https://didatticaonline.unitn.it/dol/course/view.php*"],
+        "js": ["js/course_cleaner.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      "public/clean_navbar.js"
+    ],
+    "icons": {
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+}
