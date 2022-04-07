@@ -1,8 +1,8 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Unofficial Unitn Minimal",
-    "version": "0.1",
-    "description": "Removes unnecessary unitn moodle gui elements. Not associated with unitn",
+    "version": "0.0.1",
+    "description": "Removes unnecessary unitn moodle gui elements. Not associated with unitn. https://github.com/marco-zan/unofficial-unitn-minimal",
     "content_scripts": [
       {
         "matches": ["https://didatticaonline.unitn.it/dol/mod/daddyvideo/view.php*"],
@@ -11,10 +11,21 @@
       {
         "matches": ["https://didatticaonline.unitn.it/dol/course/view.php*"],
         "js": ["js/course_cleaner.js"]
+      },
+      {
+        "matches": ["https://didatticaonline.unitn.it/dol/enrol/index.php*"],
+        "js": ["js/auto_click_enrollment.js"]
+      },
+      {
+        "matches": ["https://didatticaonline.unitn.it/dol/loginUniTN.php*"],
+        "js": ["js/auto_click_login.js"]
       }
     ],
     "web_accessible_resources": [
-      "public/clean_navbar.js"
+      {
+        "resources": [ "public/clean_navbar.js"],
+        "matches": [ "https://didatticaonline.unitn.it/*" ]
+      }
     ],
     "icons": {
       "48": "icons/48.png",
